@@ -207,13 +207,6 @@ genhtml coverage/lcov.info -o coverage/html
 - **State optimization** dengan Riverpod
 - **Code splitting** berdasarkan fitur
 
-## 🤝 Contributing
-
-1. Fork repository
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open Pull Request
 
 ## 📄 License
 
