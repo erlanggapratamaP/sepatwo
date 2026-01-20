@@ -6,6 +6,8 @@ import '../../core/constants/app_constants.dart';
 import '../product/providers/product_provider.dart';
 import '../cart/providers/cart_provider.dart';
 import '../product/widgets/product_card.dart';
+import '../product/providers/category_provider.dart';
+import '../../data/model/category_response_model/category.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -15,6 +17,21 @@ class HomeScreen extends ConsumerWidget {
     final featuredShoesAsync = ref.watch(featuredShoesProvider);
     final allShoesAsync = ref.watch(shoesProvider);
     final cartItemCount = ref.watch(cartItemCountProvider);
+    final categoryState = ref.watch(categoryProvider);
+
+    // Load categories on first build
+    ref.listen(categoryProvider, (previous, next) {
+      if (previous is CategoryInitial && next is CategoryInitial) {
+        ref.read(categoryProvider.notifier).getCategories();
+      }
+    });
+
+    // Trigger loading categories
+    if (categoryState is CategoryInitial) {
+      Future.microtask(() {
+        ref.read(categoryProvider.notifier).getCategories();
+      });
+    }
 
     return Scaffold(
       backgroundColor: AppTheme.backgroundGrey,
@@ -129,21 +146,51 @@ class HomeScreen extends ConsumerWidget {
                 const SizedBox(height: AppConstants.spacing12),
                 SizedBox(
                   height: 100,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: AppConstants.spacing16,
-                    ),
-                    itemCount: AppConstants.shoeCategories.length,
-                    itemBuilder: (context, index) {
-                      final category = AppConstants.shoeCategories[index];
-                      return Padding(
-                        padding: const EdgeInsets.only(
-                          right: AppConstants.spacing12,
+                  child: categoryState.when(
+                    initial:
+                        () => const Center(child: CircularProgressIndicator()),
+                    loading:
+                        () => const Center(child: CircularProgressIndicator()),
+                    loaded:
+                        (categories) =>
+                            categories.isEmpty
+                                ? Center(
+                                  child: Text(
+                                    'No categories available',
+                                    style:
+                                        Theme.of(context).textTheme.bodyMedium,
+                                  ),
+                                )
+                                : ListView.builder(
+                                  scrollDirection: Axis.horizontal,
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: AppConstants.spacing16,
+                                  ),
+                                  itemCount: categories.length,
+                                  itemBuilder: (context, index) {
+                                    final category = categories[index];
+                                    return Padding(
+                                      padding: const EdgeInsets.only(
+                                        right: AppConstants.spacing12,
+                                      ),
+                                      child: _CategoryCard(category: category),
+                                    );
+                                  },
+                                ),
+                    error:
+                        (message) => Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Icon(Icons.error_outline, size: 32),
+                              const SizedBox(height: 8),
+                              Text(
+                                'Failed to load categories',
+                                style: Theme.of(context).textTheme.bodyMedium,
+                              ),
+                            ],
+                          ),
                         ),
-                        child: _CategoryCard(category: category),
-                      );
-                    },
                   ),
                 ),
               ],
@@ -362,7 +409,7 @@ class HomeScreen extends ConsumerWidget {
 }
 
 class _CategoryCard extends StatelessWidget {
-  final String category;
+  final Category category;
 
   const _CategoryCard({required this.category});
 
@@ -389,19 +436,38 @@ class _CategoryCard extends StatelessWidget {
                 color: AppTheme.backgroundGrey,
                 borderRadius: BorderRadius.circular(AppConstants.borderRadius8),
               ),
-              child: Icon(
-                _getCategoryIcon(category),
-                size: AppConstants.iconSize24,
-                color: AppTheme.primaryBlack,
-              ),
+              child:
+                  category.image != null && category.image!.isNotEmpty
+                      ? ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                          AppConstants.borderRadius8,
+                        ),
+                        child: Image.network(
+                          category.image!,
+                          fit: BoxFit.cover,
+                          errorBuilder:
+                              (context, error, stackTrace) => Icon(
+                                _getCategoryIcon(category.name ?? ''),
+                                size: AppConstants.iconSize24,
+                                color: AppTheme.primaryBlack,
+                              ),
+                        ),
+                      )
+                      : Icon(
+                        _getCategoryIcon(category.name ?? ''),
+                        size: AppConstants.iconSize24,
+                        color: AppTheme.primaryBlack,
+                      ),
             ),
             const SizedBox(height: AppConstants.spacing8),
             Text(
-              category,
+              category.name ?? '',
               style: Theme.of(
                 context,
               ).textTheme.labelSmall!.copyWith(fontWeight: FontWeight.w500),
               textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
@@ -409,8 +475,8 @@ class _CategoryCard extends StatelessWidget {
     );
   }
 
-  IconData _getCategoryIcon(String category) {
-    switch (category.toLowerCase()) {
+  IconData _getCategoryIcon(String categoryName) {
+    switch (categoryName.toLowerCase()) {
       case 'sneakers':
         return Icons.sports_soccer;
       case 'formal':

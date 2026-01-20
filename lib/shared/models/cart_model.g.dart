@@ -27,12 +27,13 @@ Map<String, dynamic> _$$CartItemImplToJson(_$CartItemImpl instance) =>
     };
 
 _$CartImpl _$$CartImplFromJson(Map<String, dynamic> json) => _$CartImpl(
-      userId: json['userId'] as String,
-      items: (json['items'] as List<dynamic>)
+  userId: json['userId'] as String,
+  items:
+      (json['items'] as List<dynamic>)
           .map((e) => CartItem.fromJson(e as Map<String, dynamic>))
           .toList(),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-    );
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+);
 
 Map<String, dynamic> _$$CartImplToJson(_$CartImpl instance) =>
     <String, dynamic>{

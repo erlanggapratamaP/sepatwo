@@ -5,11 +5,10 @@ class AppConstants {
   static const String appDescription = 'Elegant monochrome shoe e-commerce app';
 
   // API Constants
-  static const String baseUrl = 'https://your-supabase-url.supabase.co';
+  static const String baseUrl = 'https://sepatwo.web.id/api';
   static const String apiVersion = 'v1';
-  static const int connectTimeout = 30000;
-  static const int receiveTimeout = 30000;
-
+  static const Duration connectTimeout = Duration(seconds: 30);
+  static const Duration receiveTimeout = Duration(seconds: 30);
   // Storage Keys
   static const String authTokenKey = 'auth_token';
   static const String userIdKey = 'user_id';
@@ -17,6 +16,12 @@ class AppConstants {
   static const String cartKey = 'cart_items';
   static const String wishlistKey = 'wishlist_items';
   static const String onboardingKey = 'onboarding_completed';
+
+  // Storage Keys
+  static const String tokenKey = 'auth_token';
+  static const String userKey = 'user_data';
+  static const String emailKey = 'user_email';
+  static const String passwordKey = 'user_password';
 
   // Pagination
   static const int pageSize = 20;

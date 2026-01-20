@@ -212,12 +212,12 @@ class AppTheme {
     ),
 
     // Card Theme
-    cardTheme: CardTheme(
-      color: primaryWhite,
-      elevation: 2,
-      shadowColor: shadowGrey,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-    ),
+    // cardTheme: CardTheme(
+    //   color: primaryWhite,
+    //   elevation: 2,
+    //   shadowColor: shadowGrey,
+    //   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    // ),
 
     // Bottom Navigation Bar Theme
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
@@ -236,13 +236,13 @@ class AppTheme {
 
     // Checkbox Theme
     checkboxTheme: CheckboxThemeData(
-      fillColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.selected)) {
+      fillColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
           return primaryBlack;
         }
         return Colors.transparent;
       }),
-      checkColor: MaterialStateProperty.all(primaryWhite),
+      checkColor: WidgetStateProperty.all(primaryWhite),
       side: const BorderSide(color: borderGrey, width: 2),
     ),
   );

@@ -1,4 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sepatwo/core/network/dio_client.dart';
+import 'package:sepatwo/data/datasource/product/product_remote_datasource.dart';
+import 'package:sepatwo/data/model/product_response_model/product_response_model.dart';
+import 'package:sepatwo/data/repository/product_repository_impl.dart';
+import 'package:sepatwo/domain/repository/product_repository.dart';
 import '../../../shared/models/shoe_model.dart';
 
 // Dummy data for development
@@ -101,23 +106,50 @@ final dummyShoes = [
   ),
 ];
 
+// Provider for ProductRemoteDatasource
+final productRemoteDatasourceProvider = Provider<ProductRemoteDatasource>((
+  ref,
+) {
+  return ProductRemoteDatasourceImpl(DioClient.dio);
+});
+
+// Provider for ProductRepository
+final productRepositoryProvider = Provider<ProductRepository>((ref) {
+  final remoteDatasource = ref.watch(productRemoteDatasourceProvider);
+  return ProductRepositoryImpl(remoteDatasource);
+});
+
 // Provider for all shoes
 final shoesProvider =
     StateNotifierProvider<ShoesNotifier, AsyncValue<List<Shoe>>>((ref) {
-      return ShoesNotifier();
+      final repository = ref.watch(productRepositoryProvider);
+      return ShoesNotifier(repository);
     });
 
 class ShoesNotifier extends StateNotifier<AsyncValue<List<Shoe>>> {
-  ShoesNotifier() : super(const AsyncValue.loading()) {
+  final ProductRepository _repository;
+
+  ShoesNotifier(this._repository) : super(const AsyncValue.loading()) {
     loadShoes();
   }
 
   Future<void> loadShoes() async {
     try {
       state = const AsyncValue.loading();
-      // Simulate API call delay
-      await Future.delayed(const Duration(seconds: 1));
-      state = AsyncValue.data(dummyShoes);
+
+      final result = await _repository.getProducts();
+
+      result.fold(
+        (failure) {
+          state = AsyncValue.error(failure.message, StackTrace.current);
+        },
+        (productResponse) {
+          // Convert ProductResponseModel to List<Shoe>
+          // You might need to adjust this based on your ProductData structure
+          final shoes = _convertProductResponseToShoes(productResponse);
+          state = AsyncValue.data(shoes);
+        },
+      );
     } catch (error, stackTrace) {
       state = AsyncValue.error(error, stackTrace);
     }
@@ -125,6 +157,47 @@ class ShoesNotifier extends StateNotifier<AsyncValue<List<Shoe>>> {
 
   Future<void> refreshShoes() async {
     await loadShoes();
+  }
+
+  // Helper method to convert ProductResponseModel to List<Shoe>
+  List<Shoe> _convertProductResponseToShoes(
+    ProductResponseModel productResponse,
+  ) {
+    if (productResponse.data?.data == null) {
+      return [];
+    }
+
+    return productResponse.data!.data!.map<Shoe>((productDatum) {
+      return Shoe(
+        id: productDatum.id?.toString() ?? '',
+        name: productDatum.name ?? 'Unknown Product',
+        description: productDatum.description ?? 'No description available',
+        price: (productDatum.price ?? 0).toDouble(),
+        originalPrice: (productDatum.price ?? 0).toDouble(),
+        brand: 'Unknown Brand', // ProductDatum doesn't have brand field
+        category: 'General', // ProductDatum doesn't have category name
+        images: productDatum.image != null ? [productDatum.image!] : [],
+        availableSizes: [
+          '38',
+          '39',
+          '40',
+          '41',
+          '42',
+          '43',
+          '44',
+        ], // Default sizes
+        availableColors: ['Black', 'White'], // Default colors
+        rating: 4.0, // Default rating
+        reviewCount: 0, // Default review count
+        inStock: (productDatum.isAvailable ?? 0) == 1,
+        stockQuantity: productDatum.stock ?? 0,
+        createdAt: productDatum.createdAt ?? DateTime.now(),
+        updatedAt: productDatum.updatedAt ?? DateTime.now(),
+        discount: null,
+        tags: [],
+        specifications: null,
+      );
+    }).toList();
   }
 }
 

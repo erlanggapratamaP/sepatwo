@@ -7,22 +7,24 @@ part of 'user_model.dart';
 // **************************************************************************
 
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
-      id: json['id'] as String,
-      email: json['email'] as String,
-      firstName: json['firstName'] as String,
-      lastName: json['lastName'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      phone: json['phone'] as String?,
-      avatar: json['avatar'] as String?,
-      dateOfBirth: json['dateOfBirth'] == null
+  id: json['id'] as String,
+  email: json['email'] as String,
+  firstName: json['firstName'] as String,
+  lastName: json['lastName'] as String,
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  phone: json['phone'] as String?,
+  avatar: json['avatar'] as String?,
+  dateOfBirth:
+      json['dateOfBirth'] == null
           ? null
           : DateTime.parse(json['dateOfBirth'] as String),
-      gender: json['gender'] as String?,
-      addresses: (json['addresses'] as List<dynamic>?)
+  gender: json['gender'] as String?,
+  addresses:
+      (json['addresses'] as List<dynamic>?)
           ?.map((e) => Address.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+);
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
     <String, dynamic>{

@@ -12,7 +12,8 @@ part of 'shoe_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 Shoe _$ShoeFromJson(Map<String, dynamic> json) {
   return _Shoe.fromJson(json);
@@ -55,26 +56,27 @@ abstract class $ShoeCopyWith<$Res> {
   factory $ShoeCopyWith(Shoe value, $Res Function(Shoe) then) =
       _$ShoeCopyWithImpl<$Res, Shoe>;
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String description,
-      double price,
-      double originalPrice,
-      String brand,
-      String category,
-      List<String> images,
-      List<String> availableSizes,
-      List<String> availableColors,
-      double rating,
-      int reviewCount,
-      bool inStock,
-      int stockQuantity,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String? discount,
-      List<String>? tags,
-      Map<String, dynamic>? specifications});
+  $Res call({
+    String id,
+    String name,
+    String description,
+    double price,
+    double originalPrice,
+    String brand,
+    String category,
+    List<String> images,
+    List<String> availableSizes,
+    List<String> availableColors,
+    double rating,
+    int reviewCount,
+    bool inStock,
+    int stockQuantity,
+    DateTime createdAt,
+    DateTime updatedAt,
+    String? discount,
+    List<String>? tags,
+    Map<String, dynamic>? specifications,
+  });
 }
 
 /// @nodoc
@@ -112,114 +114,138 @@ class _$ShoeCopyWithImpl<$Res, $Val extends Shoe>
     Object? tags = freezed,
     Object? specifications = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      originalPrice: null == originalPrice
-          ? _value.originalPrice
-          : originalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      brand: null == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      images: null == images
-          ? _value.images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      availableSizes: null == availableSizes
-          ? _value.availableSizes
-          : availableSizes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      availableColors: null == availableColors
-          ? _value.availableColors
-          : availableColors // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      rating: null == rating
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      reviewCount: null == reviewCount
-          ? _value.reviewCount
-          : reviewCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      inStock: null == inStock
-          ? _value.inStock
-          : inStock // ignore: cast_nullable_to_non_nullable
-              as bool,
-      stockQuantity: null == stockQuantity
-          ? _value.stockQuantity
-          : stockQuantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      discount: freezed == discount
-          ? _value.discount
-          : discount // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: freezed == tags
-          ? _value.tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      specifications: freezed == specifications
-          ? _value.specifications
-          : specifications // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as String,
+            name:
+                null == name
+                    ? _value.name
+                    : name // ignore: cast_nullable_to_non_nullable
+                        as String,
+            description:
+                null == description
+                    ? _value.description
+                    : description // ignore: cast_nullable_to_non_nullable
+                        as String,
+            price:
+                null == price
+                    ? _value.price
+                    : price // ignore: cast_nullable_to_non_nullable
+                        as double,
+            originalPrice:
+                null == originalPrice
+                    ? _value.originalPrice
+                    : originalPrice // ignore: cast_nullable_to_non_nullable
+                        as double,
+            brand:
+                null == brand
+                    ? _value.brand
+                    : brand // ignore: cast_nullable_to_non_nullable
+                        as String,
+            category:
+                null == category
+                    ? _value.category
+                    : category // ignore: cast_nullable_to_non_nullable
+                        as String,
+            images:
+                null == images
+                    ? _value.images
+                    : images // ignore: cast_nullable_to_non_nullable
+                        as List<String>,
+            availableSizes:
+                null == availableSizes
+                    ? _value.availableSizes
+                    : availableSizes // ignore: cast_nullable_to_non_nullable
+                        as List<String>,
+            availableColors:
+                null == availableColors
+                    ? _value.availableColors
+                    : availableColors // ignore: cast_nullable_to_non_nullable
+                        as List<String>,
+            rating:
+                null == rating
+                    ? _value.rating
+                    : rating // ignore: cast_nullable_to_non_nullable
+                        as double,
+            reviewCount:
+                null == reviewCount
+                    ? _value.reviewCount
+                    : reviewCount // ignore: cast_nullable_to_non_nullable
+                        as int,
+            inStock:
+                null == inStock
+                    ? _value.inStock
+                    : inStock // ignore: cast_nullable_to_non_nullable
+                        as bool,
+            stockQuantity:
+                null == stockQuantity
+                    ? _value.stockQuantity
+                    : stockQuantity // ignore: cast_nullable_to_non_nullable
+                        as int,
+            createdAt:
+                null == createdAt
+                    ? _value.createdAt
+                    : createdAt // ignore: cast_nullable_to_non_nullable
+                        as DateTime,
+            updatedAt:
+                null == updatedAt
+                    ? _value.updatedAt
+                    : updatedAt // ignore: cast_nullable_to_non_nullable
+                        as DateTime,
+            discount:
+                freezed == discount
+                    ? _value.discount
+                    : discount // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            tags:
+                freezed == tags
+                    ? _value.tags
+                    : tags // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
+            specifications:
+                freezed == specifications
+                    ? _value.specifications
+                    : specifications // ignore: cast_nullable_to_non_nullable
+                        as Map<String, dynamic>?,
+          )
+          as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$ShoeImplCopyWith<$Res> implements $ShoeCopyWith<$Res> {
   factory _$$ShoeImplCopyWith(
-          _$ShoeImpl value, $Res Function(_$ShoeImpl) then) =
-      __$$ShoeImplCopyWithImpl<$Res>;
+    _$ShoeImpl value,
+    $Res Function(_$ShoeImpl) then,
+  ) = __$$ShoeImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String description,
-      double price,
-      double originalPrice,
-      String brand,
-      String category,
-      List<String> images,
-      List<String> availableSizes,
-      List<String> availableColors,
-      double rating,
-      int reviewCount,
-      bool inStock,
-      int stockQuantity,
-      DateTime createdAt,
-      DateTime updatedAt,
-      String? discount,
-      List<String>? tags,
-      Map<String, dynamic>? specifications});
+  $Res call({
+    String id,
+    String name,
+    String description,
+    double price,
+    double originalPrice,
+    String brand,
+    String category,
+    List<String> images,
+    List<String> availableSizes,
+    List<String> availableColors,
+    double rating,
+    int reviewCount,
+    bool inStock,
+    int stockQuantity,
+    DateTime createdAt,
+    DateTime updatedAt,
+    String? discount,
+    List<String>? tags,
+    Map<String, dynamic>? specifications,
+  });
 }
 
 /// @nodoc
@@ -227,7 +253,7 @@ class __$$ShoeImplCopyWithImpl<$Res>
     extends _$ShoeCopyWithImpl<$Res, _$ShoeImpl>
     implements _$$ShoeImplCopyWith<$Res> {
   __$$ShoeImplCopyWithImpl(_$ShoeImpl _value, $Res Function(_$ShoeImpl) _then)
-      : super(_value, _then);
+    : super(_value, _then);
 
   /// Create a copy of Shoe
   /// with the given fields replaced by the non-null parameter values.
@@ -254,115 +280,136 @@ class __$$ShoeImplCopyWithImpl<$Res>
     Object? tags = freezed,
     Object? specifications = freezed,
   }) {
-    return _then(_$ShoeImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      originalPrice: null == originalPrice
-          ? _value.originalPrice
-          : originalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      brand: null == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      images: null == images
-          ? _value._images
-          : images // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      availableSizes: null == availableSizes
-          ? _value._availableSizes
-          : availableSizes // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      availableColors: null == availableColors
-          ? _value._availableColors
-          : availableColors // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      rating: null == rating
-          ? _value.rating
-          : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      reviewCount: null == reviewCount
-          ? _value.reviewCount
-          : reviewCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      inStock: null == inStock
-          ? _value.inStock
-          : inStock // ignore: cast_nullable_to_non_nullable
-              as bool,
-      stockQuantity: null == stockQuantity
-          ? _value.stockQuantity
-          : stockQuantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      discount: freezed == discount
-          ? _value.discount
-          : discount // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tags: freezed == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      specifications: freezed == specifications
-          ? _value._specifications
-          : specifications // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    return _then(
+      _$ShoeImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as String,
+        name:
+            null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                    as String,
+        description:
+            null == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                    as String,
+        price:
+            null == price
+                ? _value.price
+                : price // ignore: cast_nullable_to_non_nullable
+                    as double,
+        originalPrice:
+            null == originalPrice
+                ? _value.originalPrice
+                : originalPrice // ignore: cast_nullable_to_non_nullable
+                    as double,
+        brand:
+            null == brand
+                ? _value.brand
+                : brand // ignore: cast_nullable_to_non_nullable
+                    as String,
+        category:
+            null == category
+                ? _value.category
+                : category // ignore: cast_nullable_to_non_nullable
+                    as String,
+        images:
+            null == images
+                ? _value._images
+                : images // ignore: cast_nullable_to_non_nullable
+                    as List<String>,
+        availableSizes:
+            null == availableSizes
+                ? _value._availableSizes
+                : availableSizes // ignore: cast_nullable_to_non_nullable
+                    as List<String>,
+        availableColors:
+            null == availableColors
+                ? _value._availableColors
+                : availableColors // ignore: cast_nullable_to_non_nullable
+                    as List<String>,
+        rating:
+            null == rating
+                ? _value.rating
+                : rating // ignore: cast_nullable_to_non_nullable
+                    as double,
+        reviewCount:
+            null == reviewCount
+                ? _value.reviewCount
+                : reviewCount // ignore: cast_nullable_to_non_nullable
+                    as int,
+        inStock:
+            null == inStock
+                ? _value.inStock
+                : inStock // ignore: cast_nullable_to_non_nullable
+                    as bool,
+        stockQuantity:
+            null == stockQuantity
+                ? _value.stockQuantity
+                : stockQuantity // ignore: cast_nullable_to_non_nullable
+                    as int,
+        createdAt:
+            null == createdAt
+                ? _value.createdAt
+                : createdAt // ignore: cast_nullable_to_non_nullable
+                    as DateTime,
+        updatedAt:
+            null == updatedAt
+                ? _value.updatedAt
+                : updatedAt // ignore: cast_nullable_to_non_nullable
+                    as DateTime,
+        discount:
+            freezed == discount
+                ? _value.discount
+                : discount // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        tags:
+            freezed == tags
+                ? _value._tags
+                : tags // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
+        specifications:
+            freezed == specifications
+                ? _value._specifications
+                : specifications // ignore: cast_nullable_to_non_nullable
+                    as Map<String, dynamic>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ShoeImpl implements _Shoe {
-  const _$ShoeImpl(
-      {required this.id,
-      required this.name,
-      required this.description,
-      required this.price,
-      required this.originalPrice,
-      required this.brand,
-      required this.category,
-      required final List<String> images,
-      required final List<String> availableSizes,
-      required final List<String> availableColors,
-      required this.rating,
-      required this.reviewCount,
-      required this.inStock,
-      required this.stockQuantity,
-      required this.createdAt,
-      required this.updatedAt,
-      this.discount,
-      final List<String>? tags,
-      final Map<String, dynamic>? specifications})
-      : _images = images,
-        _availableSizes = availableSizes,
-        _availableColors = availableColors,
-        _tags = tags,
-        _specifications = specifications;
+  const _$ShoeImpl({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.price,
+    required this.originalPrice,
+    required this.brand,
+    required this.category,
+    required final List<String> images,
+    required final List<String> availableSizes,
+    required final List<String> availableColors,
+    required this.rating,
+    required this.reviewCount,
+    required this.inStock,
+    required this.stockQuantity,
+    required this.createdAt,
+    required this.updatedAt,
+    this.discount,
+    final List<String>? tags,
+    final Map<String, dynamic>? specifications,
+  }) : _images = images,
+       _availableSizes = availableSizes,
+       _availableColors = availableColors,
+       _tags = tags,
+       _specifications = specifications;
 
   factory _$ShoeImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShoeImplFromJson(json);
@@ -460,10 +507,14 @@ class _$ShoeImpl implements _Shoe {
             (identical(other.category, category) ||
                 other.category == category) &&
             const DeepCollectionEquality().equals(other._images, _images) &&
-            const DeepCollectionEquality()
-                .equals(other._availableSizes, _availableSizes) &&
-            const DeepCollectionEquality()
-                .equals(other._availableColors, _availableColors) &&
+            const DeepCollectionEquality().equals(
+              other._availableSizes,
+              _availableSizes,
+            ) &&
+            const DeepCollectionEquality().equals(
+              other._availableColors,
+              _availableColors,
+            ) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.reviewCount, reviewCount) ||
                 other.reviewCount == reviewCount) &&
@@ -477,34 +528,36 @@ class _$ShoeImpl implements _Shoe {
             (identical(other.discount, discount) ||
                 other.discount == discount) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality()
-                .equals(other._specifications, _specifications));
+            const DeepCollectionEquality().equals(
+              other._specifications,
+              _specifications,
+            ));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        description,
-        price,
-        originalPrice,
-        brand,
-        category,
-        const DeepCollectionEquality().hash(_images),
-        const DeepCollectionEquality().hash(_availableSizes),
-        const DeepCollectionEquality().hash(_availableColors),
-        rating,
-        reviewCount,
-        inStock,
-        stockQuantity,
-        createdAt,
-        updatedAt,
-        discount,
-        const DeepCollectionEquality().hash(_tags),
-        const DeepCollectionEquality().hash(_specifications)
-      ]);
+    runtimeType,
+    id,
+    name,
+    description,
+    price,
+    originalPrice,
+    brand,
+    category,
+    const DeepCollectionEquality().hash(_images),
+    const DeepCollectionEquality().hash(_availableSizes),
+    const DeepCollectionEquality().hash(_availableColors),
+    rating,
+    reviewCount,
+    inStock,
+    stockQuantity,
+    createdAt,
+    updatedAt,
+    discount,
+    const DeepCollectionEquality().hash(_tags),
+    const DeepCollectionEquality().hash(_specifications),
+  ]);
 
   /// Create a copy of Shoe
   /// with the given fields replaced by the non-null parameter values.
@@ -516,33 +569,32 @@ class _$ShoeImpl implements _Shoe {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ShoeImplToJson(
-      this,
-    );
+    return _$$ShoeImplToJson(this);
   }
 }
 
 abstract class _Shoe implements Shoe {
-  const factory _Shoe(
-      {required final String id,
-      required final String name,
-      required final String description,
-      required final double price,
-      required final double originalPrice,
-      required final String brand,
-      required final String category,
-      required final List<String> images,
-      required final List<String> availableSizes,
-      required final List<String> availableColors,
-      required final double rating,
-      required final int reviewCount,
-      required final bool inStock,
-      required final int stockQuantity,
-      required final DateTime createdAt,
-      required final DateTime updatedAt,
-      final String? discount,
-      final List<String>? tags,
-      final Map<String, dynamic>? specifications}) = _$ShoeImpl;
+  const factory _Shoe({
+    required final String id,
+    required final String name,
+    required final String description,
+    required final double price,
+    required final double originalPrice,
+    required final String brand,
+    required final String category,
+    required final List<String> images,
+    required final List<String> availableSizes,
+    required final List<String> availableColors,
+    required final double rating,
+    required final int reviewCount,
+    required final bool inStock,
+    required final int stockQuantity,
+    required final DateTime createdAt,
+    required final DateTime updatedAt,
+    final String? discount,
+    final List<String>? tags,
+    final Map<String, dynamic>? specifications,
+  }) = _$ShoeImpl;
 
   factory _Shoe.fromJson(Map<String, dynamic> json) = _$ShoeImpl.fromJson;
 
@@ -618,15 +670,17 @@ mixin _$ShoeVariant {
 /// @nodoc
 abstract class $ShoeVariantCopyWith<$Res> {
   factory $ShoeVariantCopyWith(
-          ShoeVariant value, $Res Function(ShoeVariant) then) =
-      _$ShoeVariantCopyWithImpl<$Res, ShoeVariant>;
+    ShoeVariant value,
+    $Res Function(ShoeVariant) then,
+  ) = _$ShoeVariantCopyWithImpl<$Res, ShoeVariant>;
   @useResult
-  $Res call(
-      {String shoeId,
-      String size,
-      String color,
-      int stockQuantity,
-      double additionalPrice});
+  $Res call({
+    String shoeId,
+    String size,
+    String color,
+    int stockQuantity,
+    double additionalPrice,
+  });
 }
 
 /// @nodoc
@@ -650,28 +704,36 @@ class _$ShoeVariantCopyWithImpl<$Res, $Val extends ShoeVariant>
     Object? stockQuantity = null,
     Object? additionalPrice = null,
   }) {
-    return _then(_value.copyWith(
-      shoeId: null == shoeId
-          ? _value.shoeId
-          : shoeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String,
-      stockQuantity: null == stockQuantity
-          ? _value.stockQuantity
-          : stockQuantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      additionalPrice: null == additionalPrice
-          ? _value.additionalPrice
-          : additionalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            shoeId:
+                null == shoeId
+                    ? _value.shoeId
+                    : shoeId // ignore: cast_nullable_to_non_nullable
+                        as String,
+            size:
+                null == size
+                    ? _value.size
+                    : size // ignore: cast_nullable_to_non_nullable
+                        as String,
+            color:
+                null == color
+                    ? _value.color
+                    : color // ignore: cast_nullable_to_non_nullable
+                        as String,
+            stockQuantity:
+                null == stockQuantity
+                    ? _value.stockQuantity
+                    : stockQuantity // ignore: cast_nullable_to_non_nullable
+                        as int,
+            additionalPrice:
+                null == additionalPrice
+                    ? _value.additionalPrice
+                    : additionalPrice // ignore: cast_nullable_to_non_nullable
+                        as double,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -679,16 +741,18 @@ class _$ShoeVariantCopyWithImpl<$Res, $Val extends ShoeVariant>
 abstract class _$$ShoeVariantImplCopyWith<$Res>
     implements $ShoeVariantCopyWith<$Res> {
   factory _$$ShoeVariantImplCopyWith(
-          _$ShoeVariantImpl value, $Res Function(_$ShoeVariantImpl) then) =
-      __$$ShoeVariantImplCopyWithImpl<$Res>;
+    _$ShoeVariantImpl value,
+    $Res Function(_$ShoeVariantImpl) then,
+  ) = __$$ShoeVariantImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String shoeId,
-      String size,
-      String color,
-      int stockQuantity,
-      double additionalPrice});
+  $Res call({
+    String shoeId,
+    String size,
+    String color,
+    int stockQuantity,
+    double additionalPrice,
+  });
 }
 
 /// @nodoc
@@ -696,8 +760,9 @@ class __$$ShoeVariantImplCopyWithImpl<$Res>
     extends _$ShoeVariantCopyWithImpl<$Res, _$ShoeVariantImpl>
     implements _$$ShoeVariantImplCopyWith<$Res> {
   __$$ShoeVariantImplCopyWithImpl(
-      _$ShoeVariantImpl _value, $Res Function(_$ShoeVariantImpl) _then)
-      : super(_value, _then);
+    _$ShoeVariantImpl _value,
+    $Res Function(_$ShoeVariantImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ShoeVariant
   /// with the given fields replaced by the non-null parameter values.
@@ -710,40 +775,48 @@ class __$$ShoeVariantImplCopyWithImpl<$Res>
     Object? stockQuantity = null,
     Object? additionalPrice = null,
   }) {
-    return _then(_$ShoeVariantImpl(
-      shoeId: null == shoeId
-          ? _value.shoeId
-          : shoeId // ignore: cast_nullable_to_non_nullable
-              as String,
-      size: null == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String,
-      stockQuantity: null == stockQuantity
-          ? _value.stockQuantity
-          : stockQuantity // ignore: cast_nullable_to_non_nullable
-              as int,
-      additionalPrice: null == additionalPrice
-          ? _value.additionalPrice
-          : additionalPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
+    return _then(
+      _$ShoeVariantImpl(
+        shoeId:
+            null == shoeId
+                ? _value.shoeId
+                : shoeId // ignore: cast_nullable_to_non_nullable
+                    as String,
+        size:
+            null == size
+                ? _value.size
+                : size // ignore: cast_nullable_to_non_nullable
+                    as String,
+        color:
+            null == color
+                ? _value.color
+                : color // ignore: cast_nullable_to_non_nullable
+                    as String,
+        stockQuantity:
+            null == stockQuantity
+                ? _value.stockQuantity
+                : stockQuantity // ignore: cast_nullable_to_non_nullable
+                    as int,
+        additionalPrice:
+            null == additionalPrice
+                ? _value.additionalPrice
+                : additionalPrice // ignore: cast_nullable_to_non_nullable
+                    as double,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ShoeVariantImpl implements _ShoeVariant {
-  const _$ShoeVariantImpl(
-      {required this.shoeId,
-      required this.size,
-      required this.color,
-      required this.stockQuantity,
-      required this.additionalPrice});
+  const _$ShoeVariantImpl({
+    required this.shoeId,
+    required this.size,
+    required this.color,
+    required this.stockQuantity,
+    required this.additionalPrice,
+  });
 
   factory _$ShoeVariantImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShoeVariantImplFromJson(json);
@@ -781,7 +854,13 @@ class _$ShoeVariantImpl implements _ShoeVariant {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, shoeId, size, color, stockQuantity, additionalPrice);
+    runtimeType,
+    shoeId,
+    size,
+    color,
+    stockQuantity,
+    additionalPrice,
+  );
 
   /// Create a copy of ShoeVariant
   /// with the given fields replaced by the non-null parameter values.
@@ -793,19 +872,18 @@ class _$ShoeVariantImpl implements _ShoeVariant {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ShoeVariantImplToJson(
-      this,
-    );
+    return _$$ShoeVariantImplToJson(this);
   }
 }
 
 abstract class _ShoeVariant implements ShoeVariant {
-  const factory _ShoeVariant(
-      {required final String shoeId,
-      required final String size,
-      required final String color,
-      required final int stockQuantity,
-      required final double additionalPrice}) = _$ShoeVariantImpl;
+  const factory _ShoeVariant({
+    required final String shoeId,
+    required final String size,
+    required final String color,
+    required final int stockQuantity,
+    required final double additionalPrice,
+  }) = _$ShoeVariantImpl;
 
   factory _ShoeVariant.fromJson(Map<String, dynamic> json) =
       _$ShoeVariantImpl.fromJson;
@@ -859,20 +937,22 @@ mixin _$ShoeFilter {
 /// @nodoc
 abstract class $ShoeFilterCopyWith<$Res> {
   factory $ShoeFilterCopyWith(
-          ShoeFilter value, $Res Function(ShoeFilter) then) =
-      _$ShoeFilterCopyWithImpl<$Res, ShoeFilter>;
+    ShoeFilter value,
+    $Res Function(ShoeFilter) then,
+  ) = _$ShoeFilterCopyWithImpl<$Res, ShoeFilter>;
   @useResult
-  $Res call(
-      {String? category,
-      String? brand,
-      List<String>? sizes,
-      List<String>? colors,
-      double? minPrice,
-      double? maxPrice,
-      double? minRating,
-      String? sortBy,
-      String? sortOrder,
-      String? searchQuery});
+  $Res call({
+    String? category,
+    String? brand,
+    List<String>? sizes,
+    List<String>? colors,
+    double? minPrice,
+    double? maxPrice,
+    double? minRating,
+    String? sortBy,
+    String? sortOrder,
+    String? searchQuery,
+  });
 }
 
 /// @nodoc
@@ -901,48 +981,61 @@ class _$ShoeFilterCopyWithImpl<$Res, $Val extends ShoeFilter>
     Object? sortOrder = freezed,
     Object? searchQuery = freezed,
   }) {
-    return _then(_value.copyWith(
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sizes: freezed == sizes
-          ? _value.sizes
-          : sizes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      colors: freezed == colors
-          ? _value.colors
-          : colors // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      minPrice: freezed == minPrice
-          ? _value.minPrice
-          : minPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      maxPrice: freezed == maxPrice
-          ? _value.maxPrice
-          : maxPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      minRating: freezed == minRating
-          ? _value.minRating
-          : minRating // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-      searchQuery: freezed == searchQuery
-          ? _value.searchQuery
-          : searchQuery // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            category:
+                freezed == category
+                    ? _value.category
+                    : category // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            brand:
+                freezed == brand
+                    ? _value.brand
+                    : brand // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            sizes:
+                freezed == sizes
+                    ? _value.sizes
+                    : sizes // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
+            colors:
+                freezed == colors
+                    ? _value.colors
+                    : colors // ignore: cast_nullable_to_non_nullable
+                        as List<String>?,
+            minPrice:
+                freezed == minPrice
+                    ? _value.minPrice
+                    : minPrice // ignore: cast_nullable_to_non_nullable
+                        as double?,
+            maxPrice:
+                freezed == maxPrice
+                    ? _value.maxPrice
+                    : maxPrice // ignore: cast_nullable_to_non_nullable
+                        as double?,
+            minRating:
+                freezed == minRating
+                    ? _value.minRating
+                    : minRating // ignore: cast_nullable_to_non_nullable
+                        as double?,
+            sortBy:
+                freezed == sortBy
+                    ? _value.sortBy
+                    : sortBy // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            sortOrder:
+                freezed == sortOrder
+                    ? _value.sortOrder
+                    : sortOrder // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            searchQuery:
+                freezed == searchQuery
+                    ? _value.searchQuery
+                    : searchQuery // ignore: cast_nullable_to_non_nullable
+                        as String?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -950,21 +1043,23 @@ class _$ShoeFilterCopyWithImpl<$Res, $Val extends ShoeFilter>
 abstract class _$$ShoeFilterImplCopyWith<$Res>
     implements $ShoeFilterCopyWith<$Res> {
   factory _$$ShoeFilterImplCopyWith(
-          _$ShoeFilterImpl value, $Res Function(_$ShoeFilterImpl) then) =
-      __$$ShoeFilterImplCopyWithImpl<$Res>;
+    _$ShoeFilterImpl value,
+    $Res Function(_$ShoeFilterImpl) then,
+  ) = __$$ShoeFilterImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? category,
-      String? brand,
-      List<String>? sizes,
-      List<String>? colors,
-      double? minPrice,
-      double? maxPrice,
-      double? minRating,
-      String? sortBy,
-      String? sortOrder,
-      String? searchQuery});
+  $Res call({
+    String? category,
+    String? brand,
+    List<String>? sizes,
+    List<String>? colors,
+    double? minPrice,
+    double? maxPrice,
+    double? minRating,
+    String? sortBy,
+    String? sortOrder,
+    String? searchQuery,
+  });
 }
 
 /// @nodoc
@@ -972,8 +1067,9 @@ class __$$ShoeFilterImplCopyWithImpl<$Res>
     extends _$ShoeFilterCopyWithImpl<$Res, _$ShoeFilterImpl>
     implements _$$ShoeFilterImplCopyWith<$Res> {
   __$$ShoeFilterImplCopyWithImpl(
-      _$ShoeFilterImpl _value, $Res Function(_$ShoeFilterImpl) _then)
-      : super(_value, _then);
+    _$ShoeFilterImpl _value,
+    $Res Function(_$ShoeFilterImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of ShoeFilter
   /// with the given fields replaced by the non-null parameter values.
@@ -991,67 +1087,79 @@ class __$$ShoeFilterImplCopyWithImpl<$Res>
     Object? sortOrder = freezed,
     Object? searchQuery = freezed,
   }) {
-    return _then(_$ShoeFilterImpl(
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sizes: freezed == sizes
-          ? _value._sizes
-          : sizes // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      colors: freezed == colors
-          ? _value._colors
-          : colors // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      minPrice: freezed == minPrice
-          ? _value.minPrice
-          : minPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      maxPrice: freezed == maxPrice
-          ? _value.maxPrice
-          : maxPrice // ignore: cast_nullable_to_non_nullable
-              as double?,
-      minRating: freezed == minRating
-          ? _value.minRating
-          : minRating // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sortBy: freezed == sortBy
-          ? _value.sortBy
-          : sortBy // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sortOrder: freezed == sortOrder
-          ? _value.sortOrder
-          : sortOrder // ignore: cast_nullable_to_non_nullable
-              as String?,
-      searchQuery: freezed == searchQuery
-          ? _value.searchQuery
-          : searchQuery // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
+    return _then(
+      _$ShoeFilterImpl(
+        category:
+            freezed == category
+                ? _value.category
+                : category // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        brand:
+            freezed == brand
+                ? _value.brand
+                : brand // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        sizes:
+            freezed == sizes
+                ? _value._sizes
+                : sizes // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
+        colors:
+            freezed == colors
+                ? _value._colors
+                : colors // ignore: cast_nullable_to_non_nullable
+                    as List<String>?,
+        minPrice:
+            freezed == minPrice
+                ? _value.minPrice
+                : minPrice // ignore: cast_nullable_to_non_nullable
+                    as double?,
+        maxPrice:
+            freezed == maxPrice
+                ? _value.maxPrice
+                : maxPrice // ignore: cast_nullable_to_non_nullable
+                    as double?,
+        minRating:
+            freezed == minRating
+                ? _value.minRating
+                : minRating // ignore: cast_nullable_to_non_nullable
+                    as double?,
+        sortBy:
+            freezed == sortBy
+                ? _value.sortBy
+                : sortBy // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        sortOrder:
+            freezed == sortOrder
+                ? _value.sortOrder
+                : sortOrder // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        searchQuery:
+            freezed == searchQuery
+                ? _value.searchQuery
+                : searchQuery // ignore: cast_nullable_to_non_nullable
+                    as String?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$ShoeFilterImpl implements _ShoeFilter {
-  const _$ShoeFilterImpl(
-      {this.category,
-      this.brand,
-      final List<String>? sizes,
-      final List<String>? colors,
-      this.minPrice,
-      this.maxPrice,
-      this.minRating,
-      this.sortBy,
-      this.sortOrder,
-      this.searchQuery})
-      : _sizes = sizes,
-        _colors = colors;
+  const _$ShoeFilterImpl({
+    this.category,
+    this.brand,
+    final List<String>? sizes,
+    final List<String>? colors,
+    this.minPrice,
+    this.maxPrice,
+    this.minRating,
+    this.sortBy,
+    this.sortOrder,
+    this.searchQuery,
+  }) : _sizes = sizes,
+       _colors = colors;
 
   factory _$ShoeFilterImpl.fromJson(Map<String, dynamic> json) =>
       _$$ShoeFilterImplFromJson(json);
@@ -1124,17 +1232,18 @@ class _$ShoeFilterImpl implements _ShoeFilter {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      category,
-      brand,
-      const DeepCollectionEquality().hash(_sizes),
-      const DeepCollectionEquality().hash(_colors),
-      minPrice,
-      maxPrice,
-      minRating,
-      sortBy,
-      sortOrder,
-      searchQuery);
+    runtimeType,
+    category,
+    brand,
+    const DeepCollectionEquality().hash(_sizes),
+    const DeepCollectionEquality().hash(_colors),
+    minPrice,
+    maxPrice,
+    minRating,
+    sortBy,
+    sortOrder,
+    searchQuery,
+  );
 
   /// Create a copy of ShoeFilter
   /// with the given fields replaced by the non-null parameter values.
@@ -1146,24 +1255,23 @@ class _$ShoeFilterImpl implements _ShoeFilter {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ShoeFilterImplToJson(
-      this,
-    );
+    return _$$ShoeFilterImplToJson(this);
   }
 }
 
 abstract class _ShoeFilter implements ShoeFilter {
-  const factory _ShoeFilter(
-      {final String? category,
-      final String? brand,
-      final List<String>? sizes,
-      final List<String>? colors,
-      final double? minPrice,
-      final double? maxPrice,
-      final double? minRating,
-      final String? sortBy,
-      final String? sortOrder,
-      final String? searchQuery}) = _$ShoeFilterImpl;
+  const factory _ShoeFilter({
+    final String? category,
+    final String? brand,
+    final List<String>? sizes,
+    final List<String>? colors,
+    final double? minPrice,
+    final double? maxPrice,
+    final double? minRating,
+    final String? sortBy,
+    final String? sortOrder,
+    final String? searchQuery,
+  }) = _$ShoeFilterImpl;
 
   factory _ShoeFilter.fromJson(Map<String, dynamic> json) =
       _$ShoeFilterImpl.fromJson;

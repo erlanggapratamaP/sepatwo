@@ -7,31 +7,32 @@ part of 'shoe_model.dart';
 // **************************************************************************
 
 _$ShoeImpl _$$ShoeImplFromJson(Map<String, dynamic> json) => _$ShoeImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      description: json['description'] as String,
-      price: (json['price'] as num).toDouble(),
-      originalPrice: (json['originalPrice'] as num).toDouble(),
-      brand: json['brand'] as String,
-      category: json['category'] as String,
-      images:
-          (json['images'] as List<dynamic>).map((e) => e as String).toList(),
-      availableSizes: (json['availableSizes'] as List<dynamic>)
+  id: json['id'] as String,
+  name: json['name'] as String,
+  description: json['description'] as String,
+  price: (json['price'] as num).toDouble(),
+  originalPrice: (json['originalPrice'] as num).toDouble(),
+  brand: json['brand'] as String,
+  category: json['category'] as String,
+  images: (json['images'] as List<dynamic>).map((e) => e as String).toList(),
+  availableSizes:
+      (json['availableSizes'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      availableColors: (json['availableColors'] as List<dynamic>)
+  availableColors:
+      (json['availableColors'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
-      rating: (json['rating'] as num).toDouble(),
-      reviewCount: (json['reviewCount'] as num).toInt(),
-      inStock: json['inStock'] as bool,
-      stockQuantity: (json['stockQuantity'] as num).toInt(),
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      discount: json['discount'] as String?,
-      tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      specifications: json['specifications'] as Map<String, dynamic>?,
-    );
+  rating: (json['rating'] as num).toDouble(),
+  reviewCount: (json['reviewCount'] as num).toInt(),
+  inStock: json['inStock'] as bool,
+  stockQuantity: (json['stockQuantity'] as num).toInt(),
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  discount: json['discount'] as String?,
+  tags: (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  specifications: json['specifications'] as Map<String, dynamic>?,
+);
 
 Map<String, dynamic> _$$ShoeImplToJson(_$ShoeImpl instance) =>
     <String, dynamic>{
@@ -74,21 +75,20 @@ Map<String, dynamic> _$$ShoeVariantImplToJson(_$ShoeVariantImpl instance) =>
       'additionalPrice': instance.additionalPrice,
     };
 
-_$ShoeFilterImpl _$$ShoeFilterImplFromJson(Map<String, dynamic> json) =>
-    _$ShoeFilterImpl(
-      category: json['category'] as String?,
-      brand: json['brand'] as String?,
-      sizes:
-          (json['sizes'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      colors:
-          (json['colors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      minPrice: (json['minPrice'] as num?)?.toDouble(),
-      maxPrice: (json['maxPrice'] as num?)?.toDouble(),
-      minRating: (json['minRating'] as num?)?.toDouble(),
-      sortBy: json['sortBy'] as String?,
-      sortOrder: json['sortOrder'] as String?,
-      searchQuery: json['searchQuery'] as String?,
-    );
+_$ShoeFilterImpl _$$ShoeFilterImplFromJson(
+  Map<String, dynamic> json,
+) => _$ShoeFilterImpl(
+  category: json['category'] as String?,
+  brand: json['brand'] as String?,
+  sizes: (json['sizes'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  colors: (json['colors'] as List<dynamic>?)?.map((e) => e as String).toList(),
+  minPrice: (json['minPrice'] as num?)?.toDouble(),
+  maxPrice: (json['maxPrice'] as num?)?.toDouble(),
+  minRating: (json['minRating'] as num?)?.toDouble(),
+  sortBy: json['sortBy'] as String?,
+  sortOrder: json['sortOrder'] as String?,
+  searchQuery: json['searchQuery'] as String?,
+);
 
 Map<String, dynamic> _$$ShoeFilterImplToJson(_$ShoeFilterImpl instance) =>
     <String, dynamic>{

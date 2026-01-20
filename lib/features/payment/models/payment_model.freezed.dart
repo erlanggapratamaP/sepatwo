@@ -12,7 +12,8 @@ part of 'payment_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 PaymentModel _$PaymentModelFromJson(Map<String, dynamic> json) {
   return _PaymentModel.fromJson(json);
@@ -42,18 +43,20 @@ mixin _$PaymentModel {
 /// @nodoc
 abstract class $PaymentModelCopyWith<$Res> {
   factory $PaymentModelCopyWith(
-          PaymentModel value, $Res Function(PaymentModel) then) =
-      _$PaymentModelCopyWithImpl<$Res, PaymentModel>;
+    PaymentModel value,
+    $Res Function(PaymentModel) then,
+  ) = _$PaymentModelCopyWithImpl<$Res, PaymentModel>;
   @useResult
-  $Res call(
-      {String id,
-      double amount,
-      String currency,
-      String status,
-      String paymentMethod,
-      DateTime createdAt,
-      String? description,
-      Map<String, dynamic>? metadata});
+  $Res call({
+    String id,
+    double amount,
+    String currency,
+    String status,
+    String paymentMethod,
+    DateTime createdAt,
+    String? description,
+    Map<String, dynamic>? metadata,
+  });
 }
 
 /// @nodoc
@@ -80,40 +83,51 @@ class _$PaymentModelCopyWithImpl<$Res, $Val extends PaymentModel>
     Object? description = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as double,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      paymentMethod: null == paymentMethod
-          ? _value.paymentMethod
-          : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
+    return _then(
+      _value.copyWith(
+            id:
+                null == id
+                    ? _value.id
+                    : id // ignore: cast_nullable_to_non_nullable
+                        as String,
+            amount:
+                null == amount
+                    ? _value.amount
+                    : amount // ignore: cast_nullable_to_non_nullable
+                        as double,
+            currency:
+                null == currency
+                    ? _value.currency
+                    : currency // ignore: cast_nullable_to_non_nullable
+                        as String,
+            status:
+                null == status
+                    ? _value.status
+                    : status // ignore: cast_nullable_to_non_nullable
+                        as String,
+            paymentMethod:
+                null == paymentMethod
+                    ? _value.paymentMethod
+                    : paymentMethod // ignore: cast_nullable_to_non_nullable
+                        as String,
+            createdAt:
+                null == createdAt
+                    ? _value.createdAt
+                    : createdAt // ignore: cast_nullable_to_non_nullable
+                        as DateTime,
+            description:
+                freezed == description
+                    ? _value.description
+                    : description // ignore: cast_nullable_to_non_nullable
+                        as String?,
+            metadata:
+                freezed == metadata
+                    ? _value.metadata
+                    : metadata // ignore: cast_nullable_to_non_nullable
+                        as Map<String, dynamic>?,
+          )
+          as $Val,
+    );
   }
 }
 
@@ -121,19 +135,21 @@ class _$PaymentModelCopyWithImpl<$Res, $Val extends PaymentModel>
 abstract class _$$PaymentModelImplCopyWith<$Res>
     implements $PaymentModelCopyWith<$Res> {
   factory _$$PaymentModelImplCopyWith(
-          _$PaymentModelImpl value, $Res Function(_$PaymentModelImpl) then) =
-      __$$PaymentModelImplCopyWithImpl<$Res>;
+    _$PaymentModelImpl value,
+    $Res Function(_$PaymentModelImpl) then,
+  ) = __$$PaymentModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      double amount,
-      String currency,
-      String status,
-      String paymentMethod,
-      DateTime createdAt,
-      String? description,
-      Map<String, dynamic>? metadata});
+  $Res call({
+    String id,
+    double amount,
+    String currency,
+    String status,
+    String paymentMethod,
+    DateTime createdAt,
+    String? description,
+    Map<String, dynamic>? metadata,
+  });
 }
 
 /// @nodoc
@@ -141,8 +157,9 @@ class __$$PaymentModelImplCopyWithImpl<$Res>
     extends _$PaymentModelCopyWithImpl<$Res, _$PaymentModelImpl>
     implements _$$PaymentModelImplCopyWith<$Res> {
   __$$PaymentModelImplCopyWithImpl(
-      _$PaymentModelImpl _value, $Res Function(_$PaymentModelImpl) _then)
-      : super(_value, _then);
+    _$PaymentModelImpl _value,
+    $Res Function(_$PaymentModelImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of PaymentModel
   /// with the given fields replaced by the non-null parameter values.
@@ -158,56 +175,66 @@ class __$$PaymentModelImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$PaymentModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as double,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      paymentMethod: null == paymentMethod
-          ? _value.paymentMethod
-          : paymentMethod // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value._metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
+    return _then(
+      _$PaymentModelImpl(
+        id:
+            null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                    as String,
+        amount:
+            null == amount
+                ? _value.amount
+                : amount // ignore: cast_nullable_to_non_nullable
+                    as double,
+        currency:
+            null == currency
+                ? _value.currency
+                : currency // ignore: cast_nullable_to_non_nullable
+                    as String,
+        status:
+            null == status
+                ? _value.status
+                : status // ignore: cast_nullable_to_non_nullable
+                    as String,
+        paymentMethod:
+            null == paymentMethod
+                ? _value.paymentMethod
+                : paymentMethod // ignore: cast_nullable_to_non_nullable
+                    as String,
+        createdAt:
+            null == createdAt
+                ? _value.createdAt
+                : createdAt // ignore: cast_nullable_to_non_nullable
+                    as DateTime,
+        description:
+            freezed == description
+                ? _value.description
+                : description // ignore: cast_nullable_to_non_nullable
+                    as String?,
+        metadata:
+            freezed == metadata
+                ? _value._metadata
+                : metadata // ignore: cast_nullable_to_non_nullable
+                    as Map<String, dynamic>?,
+      ),
+    );
   }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$PaymentModelImpl implements _PaymentModel {
-  const _$PaymentModelImpl(
-      {required this.id,
-      required this.amount,
-      required this.currency,
-      required this.status,
-      required this.paymentMethod,
-      required this.createdAt,
-      this.description,
-      final Map<String, dynamic>? metadata})
-      : _metadata = metadata;
+  const _$PaymentModelImpl({
+    required this.id,
+    required this.amount,
+    required this.currency,
+    required this.status,
+    required this.paymentMethod,
+    required this.createdAt,
+    this.description,
+    final Map<String, dynamic>? metadata,
+  }) : _metadata = metadata;
 
   factory _$PaymentModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$PaymentModelImplFromJson(json);
@@ -263,15 +290,16 @@ class _$PaymentModelImpl implements _PaymentModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      amount,
-      currency,
-      status,
-      paymentMethod,
-      createdAt,
-      description,
-      const DeepCollectionEquality().hash(_metadata));
+    runtimeType,
+    id,
+    amount,
+    currency,
+    status,
+    paymentMethod,
+    createdAt,
+    description,
+    const DeepCollectionEquality().hash(_metadata),
+  );
 
   /// Create a copy of PaymentModel
   /// with the given fields replaced by the non-null parameter values.
@@ -283,22 +311,21 @@ class _$PaymentModelImpl implements _PaymentModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$PaymentModelImplToJson(
-      this,
-    );
+    return _$$PaymentModelImplToJson(this);
   }
 }
 
 abstract class _PaymentModel implements PaymentModel {
-  const factory _PaymentModel(
-      {required final String id,
-      required final double amount,
-      required final String currency,
-      required final String status,
-      required final String paymentMethod,
-      required final DateTime createdAt,
-      final String? description,
-      final Map<String, dynamic>? metadata}) = _$PaymentModelImpl;
+  const factory _PaymentModel({
+    required final String id,
+    required final double amount,
+    required final String currency,
+    required final String status,
+    required final String paymentMethod,
+    required final DateTime createdAt,
+    final String? description,
+    final Map<String, dynamic>? metadata,
+  }) = _$PaymentModelImpl;
 
   factory _PaymentModel.fromJson(Map<String, dynamic> json) =
       _$PaymentModelImpl.fromJson;

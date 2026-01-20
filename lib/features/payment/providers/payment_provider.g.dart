@@ -6,19 +6,19 @@ part of 'payment_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$paymentHash() => r'8cb7a351078c4c4b56e53db50da7ef5a2dd93665';
+String _$paymentHash() => r'c5f8d48f67d41c8ffd6136ec70b3c25d02cbbf41';
 
 /// See also [Payment].
 @ProviderFor(Payment)
 final paymentProvider =
     AutoDisposeAsyncNotifierProvider<Payment, PaymentModel?>.internal(
-  Payment.new,
-  name: r'paymentProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$paymentHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      Payment.new,
+      name: r'paymentProvider',
+      debugGetCreateSourceHash:
+          const bool.fromEnvironment('dart.vm.product') ? null : _$paymentHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$Payment = AutoDisposeAsyncNotifier<PaymentModel?>;
 // ignore_for_file: type=lint
